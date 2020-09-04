@@ -76,7 +76,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         #endregion
 
         [Test]
-        [TestCaseSource("CryptoPairs")]
+        [TestCaseSource(nameof(CryptoPairs))]
         public void ReturnsCryptoSecurityType(string pair)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -87,7 +87,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("CryptoPairs")]
+        [TestCaseSource(nameof(CryptoPairs))]
         public void ReturnsCorrectLeanSymbol(string pair)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -99,7 +99,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("RawCryptoSymbols")]
+        [TestCaseSource(nameof(RawCryptoSymbols))]
         public void ReturnsCorrectLeanSymbol(string pair, SecurityType type, string market)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -111,7 +111,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("CryptoSymbols")]
+        [TestCaseSource(nameof(CryptoSymbols))]
         public void ReturnsCorrectBrokerageSymbol(Symbol symbol)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -120,7 +120,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("CurrencyPairs")]
+        [TestCaseSource(nameof(CurrencyPairs))]
         public void ThrowsOnCurrencyPairs(string pair)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -146,7 +146,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("UnknownSymbols")]
+        [TestCaseSource(nameof(UnknownSymbols))]
         public void ThrowsOnUnknownSymbols(string pair, SecurityType type, string market)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -157,7 +157,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("UnknownSecurityType")]
+        [TestCaseSource(nameof(UnknownSecurityType))]
         public void ThrowsOnUnknownSecurityType(string pair, SecurityType type, string market)
         {
             var mapper = new BitfinexSymbolMapper();
@@ -168,7 +168,7 @@ namespace QuantConnect.Tests.Brokerages.Bitfinex
         }
 
         [Test]
-        [TestCaseSource("UnknownMarket")]
+        [TestCaseSource(nameof(UnknownMarket))]
         public void ThrowsOnUnknownMarket(string pair, SecurityType type, string market)
         {
             var mapper = new BitfinexSymbolMapper();
